@@ -1,0 +1,33 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SeeSo Web Sample</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- 배경 비디오 -->
+  <video id="background-video" autoplay muted>
+    <source src="sample.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- 동영상 타이머 -->
+  <div id="video-timer">0:00</div>
+
+  <!-- 시선 추적 정보 -->
+  <h2 id="gazeInfo">Gaze Tracking Info</h2>
+
+  <!-- 캔버스 -->
+  <canvas id="output"></canvas>
+
+  <!-- 동영상 다시 시작 버튼 -->
+  <button id="reset-button">Restart Video</button>
+
+  <script src="index.js"></script>
+</body>
+
+</html>

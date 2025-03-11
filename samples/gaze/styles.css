@@ -1,0 +1,121 @@
+/* 
+  전체 페이지 스타일 설정 
+  - 여백 제거 (margin: 0)
+  - 화면 넘침 방지 (overflow: hidden)
+  - 화면 중앙 정렬 (display: flex, justify-content: center, align-items: center)
+  - 높이를 화면 전체로 설정 (height: 100vh)
+  - 배경색을 검정으로 지정 (background-color: black)
+  - position: relative 설정으로 내부 요소의 절대 위치 조정 가능 
+*/
+body {
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+  position: relative;
+}
+
+/* 
+  전체 화면을 채우는 비디오 스타일 설정 
+  - 비디오 크기를 화면 전체로 설정 (width: 100%, height: 100%)
+  - 비율을 유지하면서 화면을 채우도록 설정 (object-fit: cover)
+  - 가장 아래에 위치하도록 z-index: -1 설정
+*/
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* 영상이 가장 아래로 가도록 설정 */
+}
+
+/* 
+  시선 추적 데이터를 표시하는 영역 설정 
+  - 전체 화면 크기로 설정 (width: 100vw, height: 100vh)
+  - 절대 위치 지정 (position: absolute, top: 0, left: 0)
+  - 영상 위에 표시되도록 z-index: 2 설정
+  - 사용자 입력 이벤트 방해 방지 (pointer-events: none)
+*/
+#output {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2; /* 영상 위에 표시되도록 설정 */
+  pointer-events: none; /* 마우스 이벤트 방해 안 하도록 설정 */
+}
+
+/* 
+  비디오 타이머 스타일 설정 
+  - 상단 중앙에 위치 (top: 10px, left: 50%, transform: translateX(-50%))
+  - 반투명 검정 배경 (background: rgba(0, 0, 0, 0.7))
+  - 흰색 글씨 (color: white)
+  - 모서리를 둥글게 처리 (border-radius: 5px)
+  - 영상 위에 표시되도록 z-index: 3 설정
+*/
+#video-timer {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  text-align: center;
+  z-index: 3;
+}
+
+/* 
+  시선 정보 표시 영역 스타일 설정 
+  - 상단 중앙에 위치 (top: 50px, left: 50%, transform: translateX(-50%))
+  - 흰색 글씨, 반투명 검정 배경 (color: white, background: rgba(0, 0, 0, 0.5))
+  - 패딩 및 둥근 모서리 설정 (padding: 10px, border-radius: 5px)
+  - 영상 위에 표시되도록 z-index: 3 설정
+*/
+#gazeInfo {
+  position: absolute;
+  top: 20px; /* 버튼과 같은 높이로 조정 */
+  right: 20px;
+  color: white;
+  font-size: 15px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  border-radius: 5px;
+  z-index: 3;
+}
+
+/* 
+  리셋 버튼 스타일 설정 
+  - 화면 우측 하단에 위치 (bottom: 20px, right: 20px)
+  - 배경색 빨강 (background: red)
+  - 흰색 글씨 (color: white)
+  - 모서리를 둥글게 설정 (border-radius: 5px)
+  - 마우스 클릭 가능하도록 커서 설정 (cursor: pointer)
+  - 영상 위에 표시되도록 z-index: 3 설정
+*/
+#reset-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: red;
+  color: white;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+/* 
+  리셋 버튼 호버 효과 (마우스를 올렸을 때 색상 변경)
+  - 배경색을 어두운 빨강으로 변경 (background: darkred)
+*/
+#reset-button:hover {
+  background: darkred;
+}
