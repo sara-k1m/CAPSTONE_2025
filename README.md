@@ -1,18 +1,25 @@
 # SeeSo & TouchDesigner OSC 연동 프로젝트
 
-이 프로젝트는 웹 브라우저에서 [SeeSo](https://seeso.io/)를 활용하여 사용자의 시선을 실시간 추적하고, 그 데이터를 Node.js 서버를 통해 TouchDesigner와 실시간으로 연동하는 프로젝트입니다.
+이 프로젝트는 웹 브라우저에서 [SeeSo](https://sdk.eyedid.ai)를 활용하여 사용자의 시선을 실시간 추적하고, 그 데이터를 Node.js 서버를 통해 TouchDesigner와 실시간으로 연동하는 프로젝트입니다.
 
 ## 📂 프로젝트 구조
 
 ```
 프로젝트 폴더
-├── osc_server.js            # Node.js OSC 서버
-├── samples                  # 웹 클라이언트 코드
-│   └── gaze
-│       ├── index.html
-│       ├── index.js         # SeeSo 클라이언트 코드
-│       └── showGaze.js      # 시선 시각화 코드
-└── package.json
+.
+├── devServer.js
+├── dist
+├── node_modules
+├── osc_server.js
+├── package-lock.json
+├── package.json
+└── samples
+    ├── gaze
+    │   ├── index.html
+    │   ├── index.js
+    │   ├── sample.mp4
+    │   └── styles.css
+    └── showGaze.js
 ```
 
 ## 🔧 설치 방법
@@ -106,7 +113,7 @@ TouchDesigner에서 다음과 같이 OSC 수신을 설정합니다:
 
 ## 📄 사용된 기술
 
-- [SeeSo SDK](https://seeso.io/)
+- [SeeSo SDK](https://sdk.eyedid.ai)
 - Node.js
 - Express
 - OSC(Open Sound Control)
