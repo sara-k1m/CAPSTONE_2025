@@ -39,6 +39,11 @@ cd [프로젝트 폴더 이름]
 npm install
 ```
 
+혹은
+```bash
+npm install cors osc express cross-env open seeso wasm-check ws parcel-bundler
+```
+
 ## 🚀 실행 방법
 
 ### 단계 1. Node.js OSC 서버 실행
