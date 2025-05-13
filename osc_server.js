@@ -17,23 +17,23 @@ const oscClient = new osc.UDPPort({
 oscClient.open();
 
 oscClient.on('ready', () => {
-  console.log('✅ OSC 준비 완료!');
+  console.log('✅ OSC server ready!');
 });
 
-// 라우트로 데이터 받기
-app.post('/send_gaze', (req, res) => {
-  const gazeData = req.body;
+// POST로 {색상 번호, 꽃 번호}를 받는 라우터
+app.post('/send_result', (req, res) => {
+  const { resultNum } = req.body;
 
   // TouchDesigner로 OSC 메시지 전송
   oscClient.send({
-    address: "/gazePosition",
-    args: [{ type: "s", value: JSON.stringify(gazeData) }]
+    address: "/resultFlower",
+    args: [ resultNum ]
   });
 
-  console.log('📨 OSC로 보낸 데이터:', gazeData);
-  res.status(200).send({ message: "Data sent successfully" });
+  console.log('📨 sent result: resultNum ');
+  res.status(200).send({ message: "Result sent successfully" });
 });
 
 app.listen(port, () => {
-  console.log(`🚀 서버 실행: http://localhost:${port}`);
+  console.log(`🚀 run server: http://localhost:${port}`);
 });
